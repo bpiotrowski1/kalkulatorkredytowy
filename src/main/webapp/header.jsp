@@ -12,7 +12,10 @@
     <div id="menu">
         <h3 class="masthead-brand"><a href="/">KALKULATOR KREDYTOWY</a></h3>
         <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link <%= ("1").equals(request.getParameter("active")) ? "active" : "" %>" href="/">Home</a>
+            <!---
+            <a class="nav-link<%-- ("1").equals(request.getParameter(" active")) ? "active" : "" --%>" href="/">Home</a>
+            --->
+            <a class="nav-link${1 eq param.active ? " active" : ""}" href="/">Home</a>
         </nav>
     </div>
 </header>
