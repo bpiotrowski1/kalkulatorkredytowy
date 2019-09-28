@@ -1,5 +1,6 @@
 <%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="header.jsp">
     <jsp:param name="active" value="1"/>
 </jsp:include>
@@ -22,8 +23,26 @@
         </div>
         <button class="btn btn-primary col-sm-3" type="submit">Wyślij</button>
     </form>
+
     <jsp:useBean id="kredyt" class="pl.bpiotrowski.Kredyt"/>
     <jsp:setProperty name="kredyt" property="*"/>
+    <c:if test="${not empty param.wysokoscKredytu and not empty param.rocznaStopaProcentowa and not empty param.okresKredytu}">
+        <br/><br/><hr/>
+        <h2>Wynik:</h2>
+        <hr/>
+        <form>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Wysokość raty:</label>
+                <input class="form-control col-sm-8" type="text" placeholder="${kredyt.obliczWysokoscRaty()}" readonly/>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Całkowity koszt kredytu:</label>
+                <input class="form-control col-sm-8" type="text" placeholder="${kredyt.obliczCalkowityKoszt()}" readonly/>
+            </div>
+        </form>
+    </c:if>
+    <%--
+
     <%
         if (request.getParameter("wysokoscKredytu") != null && !request.getParameter("wysokoscKredytu").isEmpty() &&
                 request.getParameter("rocznaStopaProcentowa") != null && !request.getParameter("rocznaStopaProcentowa").isEmpty() &&
@@ -52,6 +71,7 @@
             out.print("</table>");
         }
     %>
+    --%>
     </p>
 </div>
 <%@ include file="footer.jsp" %>
