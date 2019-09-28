@@ -10,15 +10,15 @@
     <form action="?" method="get">
         <div class="form-group row">
             <label class="col-sm-4 col-form-label" for="wysokoscKredytu">Wysokość kredytu:</label>
-            <input name="wysokoscKredytu" type="number" class="form-control col-sm-8" id="wysokoscKredytu"/>
+            <input name="wysokoscKredytu" type="number" class="form-control col-sm-8" id="wysokoscKredytu" value="${param.wysokoscKredytu}"/>
         </div>
         <div class="form-group row">
             <label class="col-sm-4 col-form-label" for="rocznaStopaProcentowa">Roczna stopa procentowa:</label>
-            <input name="rocznaStopaProcentowa" type="text" class="form-control col-sm-8" id="rocznaStopaProcentowa"/>
+            <input name="rocznaStopaProcentowa" type="text" class="form-control col-sm-8" id="rocznaStopaProcentowa" value="${param.rocznaStopaProcentowa}"/>
         </div>
         <div class="form-group row">
             <label class="col-sm-4 col-form-label" for="okresKredytu">Okres kredytu:</label>
-            <input name="okresKredytu" type="number" class="form-control col-sm-8" id="okresKredytu" step="1"/>
+            <input name="okresKredytu" type="number" class="form-control col-sm-8" id="okresKredytu" step="1" value="${param.okresKredytu}"/>
         </div>
         <button class="btn btn-primary col-sm-3" type="submit">Wyślij</button>
     </form>

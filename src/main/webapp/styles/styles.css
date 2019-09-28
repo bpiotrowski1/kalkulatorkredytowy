@@ -6,7 +6,7 @@
     height: 50px;
     width: 100%;
     text-align: center;
-    z-index: 1;
+    z-index: 10;
 }
 
 #menu {
@@ -58,7 +58,7 @@
 .container {
     margin-top: 75px;
     max-width: 42em;
-    height: 92%;
+    min-height: 78.9%;
 }
 
 .btn {
